@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Django vs Flask Comparison</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f8f9fa;
+            color: #212529;
+        }
+        
+        .header {
+            background: linear-gradient(135deg, #6366F1 0%, #8B5CF6 100%);
+            color: white;
+            padding: 3rem 0;
+            border-radius: 0 0 2rem 2rem;
+            margin-bottom: 2rem;
+        }
+        
+        .framework-card {
+            border-radius: 1rem;
+            border: none;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+            transition: transform 0.3s ease;
+            height: 100%;
+        }
+        
+        .framework-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .flask-card {
+            border-top: 5px solid #FF6B6B;
+        }
+        
+        .django-card {
+            border-top: 5px solid #20c997;
+        }
+        
+        .card-header {
+            background-color: white;
+            border-bottom: 1px solid rgba(0,0,0,0.05);
+            font-weight: 700;
+            font-size: 1.5rem;
+        }
+        
+        .feature-list {
+            list-style-type: none;
+            padding-left: 0;
+        }
+        
+        .feature-list li {
+            padding: 0.5rem 0;
+            display: flex;
+            align-items: flex-start;
+        }
+        
+        .feature-list li i {
+            margin-right: 0.75rem;
+            margin-top: 0.25rem;
+        }
+        
+        .pros-cons {
+            margin-top: 1.5rem;
+        }
+        
+        .pros-cons h4 {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 0.75rem;
+        }
+        
+        .pros-cons ul {
+            padding-left: 1.5rem;
+        }
+        
+        .pros-cons li {
+            padding: 0.25rem 0;
+        }
+        
+        .pros h4 {
+            color: #20c997;
+        }
+        
+        .cons h4 {
+            color: #FF6B6B;
+        }
+        
+        .badge {
+            font-size: 0.75rem;
+            padding: 0.5rem 0.75rem;
+            border-radius: 1rem;
+            margin-right: 0.5rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .decision-guide {
+            background-color: white;
+            border-radius: 1rem;
+            padding: 2rem;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+            margin-top: 2rem;
+            margin-bottom: 2rem;
+        }
+        
+        .decision-guide h3 {
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            color: #6366F1;
+        }
+        
+        .decision-card {
+            border-radius: 0.75rem;
+            border: 1px solid rgba(0,0,0,0.1);
+            padding: 1.5rem;
+            height: 100%;
+        }
+        
+        .decision-card h4 {
+            font-weight: 600;
+        }
+        
+        .decision-card ul {
+            padding-left: 1.5rem;
+            margin-top: 1rem;
+        }
+        
+        .comparison-table {
+            margin-top: 2rem;
+        }
+        
+        .comparison-table th {
+            font-weight: 600;
+        }
+        
+        .comparison-table td, .comparison-table th {
+            padding: 1rem;
+        }
+        
+        .icon-box {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 50px;
+            height: 50px;
+            border-radius: 0.75rem;
+            margin-bottom: 1rem;
+        }
+        
+        .flask-icon {
+            background-color: rgba(255, 107, 107, 0.1);
+            color: #FF6B6B;
+        }
+        
+        .django-icon {
+            background-color: rgba(32, 201, 151, 0.1);
+            color: #20c997;
+        }
+    </style>
+</head>
+<body>
+    <div class="container-fluid p-0">
+        <div class="header text-center">
+            <div class="container">
+                <h1 class="display-4 fw-bold mb-2">Django vs Flask</h1>
+                <p class="lead mb-0">Choosing the Right Python Web Framework for Your Project</p>
+            </div>
+        </div>
+    </div>
+    
+    <div class="container">
+        <div class="row row-cols-1 row-cols-md-2 g-4 mb-4">
+            <div class="col">
+                <div class="framework-card flask-card card">
+                    <div class="card-header d-flex align-items-center">
+                        <div class="icon-box flask-icon me-3">
+                            <i class="bi bi-fire fs-3"></i>
+                        </div>
+                        Flask
+                        <span class="badge bg-danger ms-auto">Micro-framework</span>
+                    </div>
+                    <div class="card-body">
+                        <p class="card-text">
+                            <strong>Best for:</strong> Small to medium-sized applications, microservices, and projects that require flexibility.
+                        </p>
+                        
+                        <div class="pros-cons">
+                            <div class="pros">
+                                <h4><i class="bi bi-check-circle-fill me-2"></i>Pros</h4>
+                                <ul>
+                                    <li><strong>Lightweight & Minimal</strong> – Provides only the essentials, allowing you to choose libraries as needed.</li>
+                                    <li><strong>Easy to Learn</strong> – Simpler than Django, making it great for beginners.</li>
+                                    <li><strong>Flexible</strong> – Gives you full control over components like ORM, authentication, etc.</li>
+                                    <li><strong>Better for Microservices & APIs</strong> – Works well for RESTful services.</li>
+                                </ul>
+                            </div>
+                            <div class="cons">
+                                <h4><i class="bi bi-x-circle-fill me-2"></i>Cons</h4>
+                                <ul>
+                                    <li><strong>Lacks Built-in Features</strong> – Requires additional libraries for authentication, admin panels, and database handling.</li>
+                                    <li><strong>More Boilerplate Code</strong> – Since it's minimal, you need to write more code for features that Django includes by default.</li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <div class="mt-4">
+                            <p class="fw-bold">Key Features:</p>
+                            <div>
+                                <span class="badge bg-light text-dark">Minimal</span>
+                                <span class="badge bg-light text-dark">Lightweight</span>
+                                <span class="badge bg-light text-dark">Flexible</span>
+                                <span class="badge bg-light text-dark">Blueprint System</span>
+                                <span class="badge bg-light text-dark">RESTful</span>
+                                <span class="badge bg-light text-dark">Jinja2 Templates</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col">
+                <div class="framework-card django-card card">
+                    <div class="card-header d-flex align-items-center">
+                        <div class="icon-box django-icon me-3">
+                            <i class="bi bi-lightning-charge-fill fs-3"></i>
+                        </div>
+                        Django
+                        <span class="badge bg-success ms-auto">Full-Stack Framework</span>
+                    </div>
+                    <div class="card-body">
+                        <p class="card-text">
+                            <strong>Best for:</strong> Large applications, enterprise projects, and complex websites.
+                        </p>
+                        
+                        <div class="pros-cons">
+                            <div class="pros">
+                                <h4><i class="bi bi-check-circle-fill me-2"></i>Pros</h4>
+                                <ul>
+                                    <li><strong>Batteries Included</strong> – Comes with built-in authentication, ORM, admin panel, and more.</li>
+                                    <li><strong>Scalable</strong> – Well-suited for large applications.</li>
+                                    <li><strong>Security</strong> – Protects against common security threats (CSRF, SQL Injection, etc.).</li>
+                                    <li><strong>ORM & Admin Panel</strong> – Built-in Object Relational Mapper (ORM) and a powerful admin interface.</li>
+                                </ul>
+                            </div>
+                            <div class="cons">
+                                <h4><i class="bi bi-x-circle-fill me-2"></i>Cons</h4>
+                                <ul>
+                                    <li><strong>Heavy & Opinionated</strong> – Forces a specific project structure, reducing flexibility.</li>
+                                    <li><strong>Steeper Learning Curve</strong> – More complex due to its extensive features.</li>
+                                    <li><strong>Slower for Simple Projects</strong> – Can be overkill for small applications.</li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <div class="mt-4">
+                            <p class="fw-bold">Key Features:</p>
+                            <div>
+                                <span class="badge bg-light text-dark">Full-stack</span>
+                                <span class="badge bg-light text-dark">ORM</span>
+                                <span class="badge bg-light text-dark">Admin Panel</span>
+                                <span class="badge bg-light text-dark">Authentication</span>
+                                <span class="badge bg-light text-dark">Security</span>
+                                <span class="badge bg-light text-dark">Templates</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="decision-guide">
+            <h3 class="text-center mb-4"><i class="bi bi-compass me-2"></i>Which One Should You Choose?</h3>
+            <div class="row row-cols-1 row-cols-md-2 g-4">
+                <div class="col">
+                    <div class="decision-card">
+                        <h4><i class="bi bi-fire text-danger me-2"></i>Use Flask if:</h4>
+                        <ul>
+                            <li>You need a lightweight, flexible framework</li>
+                            <li>You're building a small to medium-sized application</li>
+                            <li>You're creating RESTful APIs or microservices</li>
+                            <li>You prefer choosing your own libraries and components</li>
+                            <li>You're a beginner learning web development</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="decision-card">
+                        <h4><i class="bi bi-lightning-charge text-success me-2"></i>Use Django if:</h4>
+                        <ul>
+                            <li>You're building a large, complex application</li>
+                            <li>You want built-in admin panels and authentication</li>
+                            <li>You need a robust ORM for database operations</li>
+                            <li>You're concerned about security out of the box</li>
+                            <li>You prefer a "batteries included" approach</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="comparison-table">
+            <h3 class="text-center mb-4"><i class="bi bi-grid-3x3-gap me-2"></i>Detailed Comparison</h3>
+            <div class="table-responsive">
+                <table class="table table-striped table-hover">
+                    <thead class="table-light">
+                        <tr>
+                            <th>Feature</th>
+                            <th>Flask</th>
+                            <th>Django</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Learning Curve</td>
+                            <td><i class="bi bi-emoji-smile text-success me-2"></i>Easy</td>
+                            <td><i class="bi bi-emoji-neutral text-warning me-2"></i>Moderate to Steep</td>
+                        </tr>
+                        <tr>
+                            <td>Size</td>
+                            <td><i class="bi bi-arrows-angle-contract me-2"></i>Lightweight (Under 1 MB)</td>
+                            <td><i class="bi bi-arrows-angle-expand me-2"></i>Heavy (Several MB)</td>
+                        </tr>
+                        <tr>
+                            <td>Database ORM</td>
+                            <td><i class="bi bi-dash-circle me-2"></i>Not included (SQLAlchemy recommended)</td>
+                            <td><i class="bi bi-check-circle me-2"></i>Built-in</td>
+                        </tr>
+                        <tr>
+                            <td>Admin Interface</td>
+                            <td><i class="bi bi-dash-circle me-2"></i>Not included</td>
+                            <td><i class="bi bi-check-circle me-2"></i>Built-in</td>
+                        </tr>
+                        <tr>
+                            <td>Authentication</td>
+                            <td><i class="bi bi-dash-circle me-2"></i>Extensions required</td>
+                            <td><i class="bi bi-check-circle me-2"></i>Built-in</td>
+                        </tr>
+                        <tr>
+                            <td>REST API Support</td>
+                            <td><i class="bi bi-star-fill text-warning me-2"></i>Excellent (Flask-RESTful)</td>
+                            <td><i class="bi bi-star-half text-warning me-2"></i>Good (Django REST Framework)</td>
+                        </tr>
+                        <tr>
+                            <td>Templating</td>
+                            <td><i class="bi bi-check-circle me-2"></i>Jinja2</td>
+                            <td><i class="bi bi-check-circle me-2"></i>Django Template Language</td>
+                        </tr>
+                        <tr>
+                            <td>URL Routing</td>
+                            <td><i class="bi bi-check-circle me-2"></i>Simple, flexible</td>
+                            <td><i class="bi bi-check-circle me-2"></i>Powerful, regex-based</td>
+                        </tr>
+                        <tr>
+                            <td>Development Speed</td>
+                            <td><i class="bi bi-emoji-neutral text-warning me-2"></i>Moderate (Manual setup)</td>
+                            <td><i class="bi bi-emoji-smile text-success me-2"></i>Fast (Built-in tools)</td>
+                        </tr>
+                        <tr>
+                            <td>Community & Support</td>
+                            <td><i class="bi bi-people me-2"></i>Large</td>
+                            <td><i class="bi bi-people-fill me-2"></i>Very Large</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        
+        <div class="text-center mt-5 mb-5">
+            <p class="lead">Ready to build your next web application?</p>
+            <div class="d-flex justify-content-center gap-3">
+                <a href="#" class="btn btn-outline-primary"><i class="bi bi-book me-2"></i>Learn More About Flask</a>
+                <a href="#" class="btn btn-outline-success"><i class="bi bi-book me-2"></i>Learn More About Django</a>
+            </div>
+        </div>
+    </div>
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
